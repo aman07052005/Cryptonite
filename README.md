@@ -18,23 +18,6 @@ A full-featured cryptocurrency market tracker and virtual trading simulator — 
 
 ---
 
-## 📸 Screenshots
-
-| Home | Markets |
-|:---:|:---:|
-| ![Home](public/screenshots/home.png) | ![Markets](public/screenshots/market.png) |
-
-| Coin Detail | Buy Crypto |
-|:---:|:---:|
-| ![Coin Detail](public/screenshots/coin.png) | ![Buy](public/screenshots/buy.png) |
-
-<div align="center">
-
-| Portfolio |
-|:---:|
-| ![Portfolio](public/screenshots/portfolio.png) |
-
-</div>
 
 ---
 
