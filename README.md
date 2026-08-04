@@ -1,53 +1,84 @@
-🔐 Cryptonite
-Your gateway to the crypto universe
-Next.js React Tailwind CSS JavaScript
+<div align="center">
 
-A sleek, full-featured cryptocurrency market tracker and trading simulator — live prices, interactive charts, portfolio management, and a virtual wallet. Built for crypto enthusiasts who want real data without real risk.
+# 🔐 Cryptonite
 
-✨ What Makes Cryptonite Special:
+### *Your gateway to the crypto universe*
 
-Feature	Details:
+[![Next.js](https://img.shields.io/badge/Next.js-14.2.5-black?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES2024-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![Vercel](https://img.shields.io/badge/Deployed-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://cryptonite-seven-phi.vercel.app)
 
-📡 Live Market Data	Real-time prices, market caps, and volume via CoinGecko API
+A full-featured cryptocurrency market tracker and virtual trading simulator — live prices, interactive charts, portfolio management, and a virtual wallet. Built with real-world engineering patterns: server-side caching, rate-limit fallbacks, and a premium glassmorphism UI with 3D animations.
 
-📊 Dual Chart Libraries	Recharts for market overviews + Chart.js for deep coin analysis
+### 🌐 [Live Demo → cryptonite-seven-phi.vercel.app](https://cryptonite-seven-phi.vercel.app)
 
-💼 Virtual Trading	Start with ₹1,00,000 and practice buying crypto risk-free
+</div>
 
-📈 Portfolio Tracker	Track holdings, average buy price, and live P&L
+---
 
-🔍 Smart Search	Filter across hundreds of coins instantly
+## 📸 Screenshots
 
-🛡️ Rate-Limit Resilient	In-memory caching + JSON fallback so the app never goes dark
+| Home | Markets |
+|:---:|:---:|
+| ![Home](public/screenshots/home.png) | ![Markets](public/screenshots/market.png) |
 
-📱 Fully Responsive	Mobile-first design that looks great on any screen
+| Coin Detail | Buy Crypto |
+|:---:|:---:|
+| ![Coin Detail](public/screenshots/coin.png) | ![Buy](public/screenshots/buy.png) |
 
-🌙 Glassmorphism UI	Dark gradient theme with frosted-glass cards and glow effects
+<div align="center">
 
-🖥️ Pages at a Glance:
+| Portfolio |
+|:---:|
+| ![Portfolio](public/screenshots/portfolio.png) |
 
-/               → Market Dashboard   — Global stats, trending coins, top performers
+</div>
 
+---
+
+## ✨ Features
+
+| Feature | Details |
+|---|---|
+| 📡 **Live Market Data** | Real-time prices, market caps, and volume via CoinGecko API |
+| 📊 **Dual Chart Libraries** | Recharts for market overviews + Chart.js for deep coin analysis |
+| 💼 **Virtual Trading** | Start with ₹1,00,000 and practice buying crypto risk-free |
+| 📈 **Portfolio Tracker** | Track holdings, average buy price, and live P&L |
+| 🔍 **Smart Search & Filter** | Filter across hundreds of coins instantly — gainers, losers, volume |
+| 🛡️ **Rate-Limit Resilient** | Multi-layer fallback: cache → API → stale cache → JSON file → hardcoded |
+| 🎞️ **Live Price Ticker** | Scrolling ticker bar with real-time prices across all coins |
+| 🌀 **3D Tilt Cards** | Mouse-tracking 3D perspective tilt effect on interactive cards |
+| 🌙 **Glass-Premium UI** | Animated orbs, cyber grid, neon borders, scan-line hover effects |
+
+---
+
+## 🖥️ Pages
+
+```
+/               → Market Dashboard   — Hero, global stats, trending coins, top performers
 /ProductsPage   → Full Market Table  — Sortable list with sparkline charts + pagination
-
-/coins/[id]     → Coin Detail        — Price history charts, ATH/ATL, market metrics
-
+/coins/[id]     → Coin Detail        — Price history charts (1D/1W/1M/3M/1Y), ATH/ATL, metrics
 /buy            → Buy Crypto         — Simulate purchases with your virtual wallet
-
 /portfolio      → My Holdings        — Live P&L, cost basis, CSV export
-
 /AboutPage      → About              — The story behind Cryptonite
+```
 
-🚀 Getting Started
+---
 
-Prerequisites
+## 🚀 Getting Started
 
-Node.js v18+
-npm or yarn
+### Prerequisites
 
-Installation
+- **Node.js** v18+
+- **npm** or **yarn**
+
+### Installation
+
+```bash
 # 1. Clone the repo
-git clone https://github.com/aman07052005/Cryptonite.git
+git clone https://github.com/harshcode1/Cryptonite.git
 cd Cryptonite
 
 # 2. Install dependencies
@@ -55,35 +86,47 @@ npm install
 
 # 3. Start the dev server
 npm run dev
-Open http://localhost:3000 — you're live.
+```
 
-Production Build
+Open [http://localhost:3000](http://localhost:3000) — you're live.
+
+### Production Build
+
+```bash
 npm run build
 npm start
+```
 
-🏗️ Project Structure
+---
 
+## 🏗️ Project Structure
+
+```
 Cryptonite/
 ├── app/
-│   ├── layout.js                  # Root layout — Navbar + Footer wrapper
-│   ├── page.js                    # Home dashboard
-│   ├── globals.css                # Tailwind + custom glassmorphism styles
+│   ├── layout.js                  # Root layout — Navbar, TickerBar, animated orbs
+│   ├── page.js                    # Home dashboard with 3D hero section
+│   ├── globals.css                # Tailwind + glass-premium design system
 │   │
 │   ├── components/
-│   │   ├── Navbar.js              # Sticky nav with wallet balance display
-│   │   ├── Footer.js              # Footer with links and branding
+│   │   ├── Navbar.js              # Sticky nav with live wallet balance pill
+│   │   ├── Footer.js              # Glass backdrop footer
+│   │   ├── TickerBar.js           # Live scrolling price ticker
+│   │   ├── TiltCard.js            # 3D mouse-tracking tilt card wrapper
 │   │   ├── Markettable.js         # Coin table with inline sparklines
 │   │   ├── Sidebar.js             # Top performers sidebar
 │   │   ├── Searchbar.js           # Live search/filter input
 │   │   ├── Pagination.js          # Smart pagination component
 │   │   ├── Chart.js               # Reusable chart wrapper
-│   │   └── card.js                # Glassmorphism card primitives
+│   │   └── card.js                # Base card primitives
 │   │
 │   ├── api/
 │   │   ├── coins/route.js         # GET /api/coins — paginated market data (5min cache)
 │   │   ├── price/route.js         # GET /api/price — current prices (5min cache)
-│   │   ├── coin/[id]/route.js     # GET /api/coin/:id — full coin details
-│   │   └── chart/[id]/route.js    # GET /api/chart/:id — historical price data
+│   │   ├── coin/[id]/route.js     # GET /api/coin/:id — full coin details (1min cache)
+│   │   ├── chart/[id]/route.js    # GET /api/chart/:id — historical price data (5min cache)
+│   │   ├── global/route.js        # GET /api/global — global market stats (5min cache)
+│   │   └── trending/route.js      # GET /api/trending — trending coins (5min cache)
 │   │
 │   ├── ProductsPage/page.js       # Full market listing
 │   ├── buy/page.js                # Virtual trading desk
@@ -93,70 +136,96 @@ Cryptonite/
 │   └── not-found.js               # Custom 404
 │
 ├── data/
-│   └── coins.json                 # API response cache (fallback on rate limit)
+│   └── coins.json                 # Fallback cache for API rate limits
 │
 ├── public/                        # Static assets
 ├── tailwind.config.js
-├── next.config.mjs                # Image domains, standalone output
+├── next.config.mjs
 └── package.json
+```
 
-🔌 API Routes
-All routes include 5-minute in-memory caching keyed by query parameters. On CoinGecko rate limits (HTTP 429), responses fall back to data/coins.json.
+---
 
-Endpoint                              	Description
+## 🔌 API Routes
 
-GET /api/coins?page=1&per_page=50	     Paginated market data with sparklines
+All routes are server-side proxies with **in-memory caching** keyed by query parameters. On CoinGecko rate limits (HTTP 429), responses fall back through: stale cache → `data/coins.json` → hardcoded defaults — so the app never goes dark.
 
-GET /api/price?ids=bitcoin,ethereum 	 Current prices for specified coins
+| Endpoint | Cache TTL | Description |
+|---|---|---|
+| `GET /api/coins?page=1&per_page=50` | 5 min | Paginated market data with sparklines |
+| `GET /api/price?ids=bitcoin,ethereum` | 5 min | Current prices for specified coins |
+| `GET /api/coin/:id` | 1 min | Full details: description, links, ATH, supply |
+| `GET /api/chart/:id?days=7` | 5 min | Price history for charting (1D/1W/1M/3M/1Y) |
+| `GET /api/global` | 5 min | Global market cap, volume, BTC dominance |
+| `GET /api/trending` | 5 min | Trending coins from CoinGecko |
 
-GET /api/coin/:id	Full details:        description, links, ATH, supply
+---
 
-GET /api/chart/:id?days=7	             OHLC price history for charting
+## ⚙️ Technical Highlights
 
-💡 Tech Stack Deep Dive:
+**Server-side API proxying**
+All CoinGecko calls go through Next.js API routes — no API keys exposed to the browser, no CORS issues, and every response is cached server-side.
 
-Layer	        Technology                  	Why
+**Multi-layer rate-limit fallback**
+When CoinGecko returns HTTP 429: serve stale cache if available, fall back to `data/coins.json` (written on every successful fetch), then fall back to hardcoded baseline data. The UI always has something to show.
 
-Framework   	Next.js 14 (App Router)	      File-based routing, API routes, image optimization
+**Race condition prevention**
+Chart tab switching (1D → 1W → 1M etc.) uses `AbortController` — each new fetch aborts the previous in-flight request, so fast tab clicks never render stale data out of order.
 
-UI          	React 18	                    Component model, hooks for local state
+**Cross-component wallet sync**
+Navbar wallet balance updates instantly after a purchase without prop drilling or a global store — achieved via a custom `walletUpdated` DOM event dispatched from the buy page and listened to in the Navbar.
 
-Styling     	Tailwind CSS 3.4	            Utility-first, responsive, dark-mode friendly
+**3D tilt effect**
+`TiltCard` uses `getBoundingClientRect` + CSS `perspective` + `rotateX/rotateY` to compute a real-time 3D tilt angle from the mouse position relative to the card — zero dependencies, pure CSS transforms.
 
-Charts	      Recharts + Chart.js	          Area charts for overview; line charts for coin detail
+**Animated background system**
+Four independently animated radial gradient orbs (`position: fixed`) + a CSS grid overlay layer — all driven by `@keyframes` with staggered durations (16s–24s) so no two orbs sync up.
 
-HTTP	        Axios	                        Clean promise API, easy interceptors
+---
 
-Icons	        Lucide React	                Consistent, tree-shakable SVG icons
+## 💡 Tech Stack
 
-UI Primitives	Radix UI	                    Accessible slot/portal components
+| Layer | Technology | Why |
+|---|---|---|
+| Framework | **Next.js 14** (App Router) | File-based routing, API routes, image optimization |
+| UI | **React 18** | Hooks-based component model, no unnecessary re-renders |
+| Styling | **Tailwind CSS 3.4** | Utility-first, pairs cleanly with custom CSS animations |
+| Charts | **Recharts** + **Chart.js** | Area charts for overview; line charts for coin detail |
+| HTTP | **Axios** | Clean promise API on the client side |
+| Icons | **Lucide React** | Consistent, tree-shakable SVG icons |
+| Data Source | **CoinGecko API** (Free tier) | Comprehensive global coin data, no auth required |
+| Deployment | **Vercel** | Zero-config Next.js hosting |
 
-Data Source	  CoinGecko API (Free)	        Comprehensive, no-auth global coin data
+---
 
-💼 Virtual Portfolio System:
-Cryptonite ships with a fully simulated trading engine stored in localStorage — no backend, no real money.
+## 💼 Virtual Portfolio System
 
-Starting balance: ₹1,00,000
-Min purchase: ₹100  |  Max purchase: ₹1,00,00,000
-Tracked per holding: quantity · avg buy price · total spent (INR & USD) · purchase date
-Live metrics: current value · unrealized P&L · % return
-Export: one-click CSV download of all holdings
+A fully simulated trading engine stored in `localStorage` — no backend, no real money.
 
-🎨 Design System
-The entire UI is built around a dark glassmorphism aesthetic:
+- **Starting balance:** ₹1,00,000
+- **Min purchase:** ₹100 &nbsp;|&nbsp; **Max purchase:** ₹1,00,00,000
+- **INR → USD conversion:** fixed 83:1 rate
+- **Tracked per holding:** quantity · avg buy price · total spent (INR & USD) · purchase date
+- **Live metrics:** current value · unrealized P&L · % return
+- **Export:** one-click CSV download of all holdings
 
-Background: slate-900 → purple-900 → slate-900 diagonal gradient
+---
 
--Cards: backdrop-blur + semi-transparent backgrounds
+## 🎨 Design System
 
--Accent colors: Blue #3b82f6 · Purple #a855f7 · Green #10b981 · Red #ef4444
+Built around a **dark glass-premium** aesthetic with motion:
 
--Text effects: Animated gradient text, glow effects on key elements
+- **Background:** Deep `#07071a` base + 4 animated radial gradient orbs (blue, purple, cyan, pink) + CSS cyber grid overlay
+- **Cards:** `glass-premium` — `rgba(8,12,30,0.65)` background + `backdrop-blur(24px)` + neon border glow
+- **Neon accents:** `.neon-green` / `.neon-red` with `text-shadow` glow for price changes
+- **Motion:** Hero text staggered entrance, shimmer gradient text, 3D float animations on coin cards, scan-line hover effect on cards
+- **Ticker:** CSS `@keyframes` infinite scroll at 45s, pauses on hover
 
--Custom utilities: .glass-card, .btn-modern, .gradient-text, .glow-purple
+---
 
-📦 Key Dependencies
+## 📦 Key Dependencies
 
+```json
 {
   "next": "14.2.5",
   "react": "^18",
@@ -167,16 +236,30 @@ Background: slate-900 → purple-900 → slate-900 diagonal gradient
   "@radix-ui/react-slot": "^1.1.0",
   "tailwindcss": "^3.4.1"
 }
+```
 
-🤝 Contributing
+---
 
-Fork the repo
-Create a feature branch: git checkout -b feature/amazing-feature
+## 🤝 Contributing
 
-Commit your changes: git commit -m "Add amazing feature"
+1. Fork the repo
+2. Create a feature branch: `git checkout -b feature/amazing-feature`
+3. Commit your changes: `git commit -m "Add amazing feature"`
+4. Push to the branch: `git push origin feature/amazing-feature`
+5. Open a Pull Request
 
-Push to the branch: git push origin feature/amazing-feature
+---
 
+## 📄 License
 
+Distributed under the **MIT License**.
 
+---
 
+<div align="center">
+
+Built with ❤️ by [Aman Yadav](https://github.com/aman07052005)
+
+*Powered by [CoinGecko API](https://www.coingecko.com/en/api) · Deployed on [Vercel](https://cryptonite-seven-phi.vercel.app)*
+
+</div>
